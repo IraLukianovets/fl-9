@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>HTML Basics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="main">
+      <div id="container">
+        <div id="content" role="main">
+          <!-- TODO: Content goes here -->
+          
+          <img src="logo.png" alt="logo" />
+          <h1 id="home">
+            <b>HTML Elements</b>
+          </h1>
+          
+          <hr>
+          <nav>
+            <a href="#home">
+              <b>Home</b>
+            </a>
+            <a href="#headers">
+              <b>Headers</b>
+            </a>
+            <a href="#table">
+              <b>Table</b>
+            </a>
+            <a href="#list">
+              <b>List</b>
+            </a>
+            <a href="#textformats">
+              <b>Text formats</b>
+            </a>
+            <a href="#blockquotes">
+              <b>Blockquotes</b>
+            </a>
+          </nav>
+          <hr>
+          
+          <p>Pay attention to h1 tag inside section element. Font-size for h1 is the same as font-size for h2, because we have to use
+            only one h1 on the page, and it is commonly used inside header</p>
+          <h2 id="headers">Header 2</h2>
+          <h3>Header 3 </h3>
+          <h4>Header 4 </h4>
+          <h5>Header 5 </h5>
+          <h6>Header 6 </h6>
+
+          <a id ="table"></a>
+          <h2>
+            <b>Table</b>
+          </h2>
+            
+            <table>
+              <tr>
+                <th>Header</th>
+                <th>Header</th>
+                <th>Header</th>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Strong</strong>
+                </td>
+                <td>CO
+                  <small>2</small>
+                </td>
+                <td>
+                  <a href="">Some link</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i>Italic</i>
+                </td>
+                <td>
+                  <abbr>Abbreviation</abbr>
+                </td>
+                <td>
+                  <del>Delete</del>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <u>Underline</u>
+                </td>
+                <td>5
+                  <sup>3</sup>=125</td>
+                <td>
+                  <ins>Inserted</ins>
+                </td>
+              </tr>
+            </table>
+            
+            <a id="list"></a>
+            <h2>
+              <b>Unordered List</b>
+            </h2>
+            <ul>
+              <li>List item 1</li>
+              <li>List item 2</li>
+                <li><ul>Some nested list item 1</ul></li>
+              <li>List item 3</li>
+            </ul>
+            
+            <h2>
+              <b>Ordered List</b>
+            </h2>
+            <ol>
+              <li>List item 1</li>
+              <li>List item 2</li>
+              <ol type="A">
+                <li>Some nested list item 1</li>
+              </ol>
+              <li>List item 3</li>
+            </ol>
+            
+            <h3>
+              <b>Definition List</b>
+            </h3>
+            <dl>
+              <dt>
+                <b>defines terms 1</b>
+              </dt>
+              <dl>description 1</dl>
+            </dl>
+            <dl>
+              <dt>
+                <b>defines terms 2</b>
+              </dt>
+              <dl>description</dl>
+            </dl>
+
+              <a id="details"></a>
+              <h2>
+                <b>Details</b>
+              </h2>
+              <details open>
+                <summary>Some details element (open)</summary>
+                <p>Here are more details about the details.</p>
+              </details>
+              <details>
+                <summary>Some details element (close)</summary>
+                <p>Here are more details about the details.</p>
+              </details>
+              <hr>
+
+              <a id="textformats"></a>
+              <h2>
+                <b>Text formats</b>
+              </h2>
+              
+              <p>
+                <b>Article Text</b>
+              </p>
+              
+              <article>
+                <h3>
+                  <b>Article Title</b>
+                </h3>
+                <description>Article description</description>
+              </article>
+
+              <h3>
+                <b>
+                  <br>Preformatted Text</b>
+              </h3>
+
+<pre>          
+Text
+    in a pre element
+        is displayed in a fixed-width
+  font, and it preserves
+   both           spaces and
+       line breaks
+
+</pre>
+                <h4>
+                  <b>Code</b>
+                </h4>
+                <code>
+ <pre>
+.wrapper {
+  display: flex;
+  vertical-align: middle;
+  justify-content: center;
+}
+</pre>
+                </code>
+                <a id="blockquotes"></a>
+                <h2>
+                  <b>Blockquotes</b>
+                </h2>
+                
+                <p>Let’s keep it simple. Italics are good to help set it off from the body text. Be sure to style the citation.</p>
+                <blockquote>
+                  "If you go back a few hundred years, what we take for granted today would seem like magic-being able to talk to people over
+                  long distances, to transmit images, flying, accessing vast amounts of data like an oracle. These are all things that would
+                  have been considered magic a few hundred years ago."
+                  <a href="https://en.wikipedia.org/wiki/Elon_Musk"><br>Elon Musk</a>
+                </blockquote>
+                
+                <footer>
+                  © Copyright Epam Systems
+                </footer>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -30,7 +30,7 @@
             <a href="#table">
               <b>Table</b>
             </a>
-            <a href="#list">
+            <a href="#lists">
               <b>List</b>
             </a>
             <a href="#textformats">
@@ -95,31 +95,33 @@
               </tr>
             </table>
             
-            <a id="list"></a>
+            <a id="lists"></a>
             <h2>
               <b>Unordered List</b>
             </h2>
             <ul>
               <li>List item 1</li>
-              <li>List item 2</li>
-              <li>
-                <ul>Some nested list item 1</ul>
+              <li>List item 2
+                <ul>
+                  <li>Some nested list item 1</li>
+                </ul>
               </li>
               <li>List item 3</li>
             </ul>
-            
+
             <h2>
               <b>Ordered List</b>
             </h2>
             <ol>
               <li>List item 1</li>
-              <li>List item 2</li>
-              <ol type="A">
-                <li>Some nested list item 1</li>
-              </ol>
+              <li>List item 2
+                <ol type="A">
+                  <li>Some nested list item 1</li>
+                </ol>
+              </li>
               <li>List item 3</li>
             </ol>
-            
+
             <h3>
               <b>Definition List</b>
             </h3>
@@ -127,13 +129,13 @@
               <dt>
                 <b>defines terms 1</b>
               </dt>
-              <dl>description 1</dl>
+              <dd>description 1</dd>
             </dl>
             <dl>
               <dt>
                 <b>defines terms 2</b>
               </dt>
-              <dl>description</dl>
+              <dd>description</dd>
             </dl>
 
               <a id="details"></a>
@@ -163,7 +165,7 @@
                 <h3>
                   <b>Article Title</b>
                 </h3>
-                <description>Article description</description>
+                <p>Article description</p>
               </article>
 
               <h3>
@@ -183,15 +185,16 @@ Text
                 <h4>
                   <b>Code</b>
                 </h4>
-                <code>
  <pre>
+<code>
 .wrapper {
   display: flex;
   vertical-align: middle;
   justify-content: center;
 }
+</code>
 </pre>
-                </code>
+ 
                 <a id="blockquotes"></a>
                 <h2>
                   <b>Blockquotes</b>
@@ -207,7 +210,7 @@ Text
                 
                 <footer>
                   © Copyright Epam Systems
-                </footer>
+                </footer>        
 
         </div>
       </div>

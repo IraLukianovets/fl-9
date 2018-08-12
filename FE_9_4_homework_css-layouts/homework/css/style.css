@@ -136,14 +136,16 @@ article .image .right-btn-block {
 
 article .image .img-description {
     position: relative;
-    top: 82%;
+    top: 70%;
     margin-left: 10px;
     font-family: 'Open Sans';
+    font-size: 20px;
 }
 
 article .image p {
     flex-grow: 1;
     margin-bottom: -30px;
+
 }
 
 article .description {

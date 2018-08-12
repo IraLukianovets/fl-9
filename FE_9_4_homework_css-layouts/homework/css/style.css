@@ -1,10 +1,4 @@
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFW50bbck.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
+
 *{
     margin: 0;
     padding: 0;
@@ -14,6 +8,7 @@ body{
     font-family: 'Open Sans';
 }
 header {
+    font-family: 'Open Sans';
     height: 740px;
     background: #6f6f6f url("../img/apples.jpg") center center no-repeat;
     object-fit: cover;
@@ -54,14 +49,15 @@ header {
     width: 100%;
     text-align: center;
     font-size: 40px;
+    letter-spacing: 10px;
 }
 .brand-since{
     position: absolute;
     left: 0;
-    top: 47%;
+    top: 49%;
     width: 100%;
     text-align: center;
-    font-size: 20px;
+    font-size: 15px;
 }
 .show-more-btn {
     background-color: rgba(0,0,0,.4);
@@ -93,6 +89,7 @@ header {
 .about-text {
     padding: 40px;
     width: 50%;
+    font-family: 'Open Sans';
 }
 .featured-articles-header{
     text-align: center;
@@ -106,6 +103,8 @@ header {
     width: 300px;
     background-position: center;
     background-size:cover;
+    display: flex;
+    justify-content: flex-start;
 }
 
 article {
@@ -126,8 +125,9 @@ article .image {
     color: #FFFFFF;
 }
 
-article:nth-child(odd) {
+article:nth-child(even) {
     flex-direction: row-reverse;
+
 }
 
 article .image .right-btn-block {
@@ -138,39 +138,33 @@ article .image .img-description {
     position: relative;
     top: 82%;
     margin-left: 10px;
+    font-family: 'Open Sans';
 }
 
 article .image p {
     flex-grow: 1;
+    margin-bottom: -30px;
 }
 
 article .description {
     text-align: center;
     flex: 40%;
+    margin-right: 10px;
 }
-article:nth-child(even){
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    font-weight: normal;
-    text-align: center;
 
-}
-article:nth-child(odd){
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    font-weight: normal;
-}
-.right-btn-block{
+.like-btn {
     background-color: rgba(0,0,0,.4);
-    color: #fff;
     text-decoration: none;
-    text-align: center;
     border: 2px solid #fff;
     padding: 10px 15px;
     display: inline-block;
-    position: absolute;
+    text-align: right;
+    margin: 20px;
+    cursor:pointer;
+}
+.like-btn::after {
+    content: "♥";
+    padding-left: 5px;
 }
 
 .newsletter-subscription {
@@ -240,7 +234,7 @@ article:nth-child(odd){
     background-color: #f3f3f3;
     border: 1px solid #343638;
     position: relative;
-    width: 50%;
+    width: 48%;
     left: 4px;
 }
 .subscription-btn-footer {

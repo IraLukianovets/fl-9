@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="/homework/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <title>CSS Layouts</title>
+</head>
+<body>
+    <!-- Your code goes here -->
+
+    <link href="css/style.css" rel="stylesheet">
+      <header>
+        <div class="left-navigation">
+          <a href="" class="logo">BLACK & WHITE</a>
+        </div>
+        <nav class="rigth-navigation">
+          <a role="button" href="#list" target="_self">Home</a>
+          <a role="button" href="#about" target="_self">About</a>
+          <a role="button" href="#vacancy">Vacansies</a>
+          <a role="button" href="#shop">Shop</a>
+        </nav>
+      
+        <div class="brand">
+          <h1 class="brand-header">BLACK
+            <span class="">&</span> WHITE</h1>
+          <p class="brand-since">An Original Brand Since 1965</p>
+        </div>
+        <a href="#" class="show-more-btn">Show More</a>
+      </header>
+
+      <section class="about">
+          <div class="wrapper">
+              <div class="about-content">
+                  <h2 class="about-header">Proper checks are now part of the article. Added&nbsp;<strong>information about</strong> the block value.</h2>
+                  <p class="about-text">If you're a regular reader here at CSS-Tricks, chances are good you know a bit about web fonts.
+                      You may even know a few useful tricks to control how fonts load, but have you used the CSS font-display property?
+                      If all of this is new to you, no sweat.
+                  </p>
+              </div>
+          </div>
+      </section>
+
+      <section class="featured-articles">
+
+          <h2 class="featured-articles-header">Read some of our
+            <b>featured articles</b>
+          </h2>
+      
+          <div class="article-list">
+            
+            <article>
+              <div class="image" style="background-image: url('img/sample.jpg')">
+                <div class="right-btn-block">
+                    <button>172</button>
+                </div>
+                <div class="img-description">
+                    <p>Januari'15 <strong>South France</strong></p>
+                </div>
+              </div>
+              <div class="description">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+              </div>
+            </article>
+
+            <article>
+                <div class="image" style="background-image: url('img/sample3.jpg')">
+                  <div class="right-btn-block">
+                      <button>172</button>
+                  </div>
+                  <div class="img-description">
+                      <p>Januari'15 <strong>South France</strong></p>
+                  </div>
+                </div>
+                <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                </div>
+              </article>
+
+              <article>
+                  <div class="image" style="background-image: url('img/sample.jpg')">
+                    <div class="right-btn-block">
+                        <button>72</button>
+                    </div>
+                    <div class="img-description">
+                        <p>Januari'15 <strong>South France</strong></p>
+                    </div>
+                  </div>
+                  <div class="description">
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                  </div>
+                </article>
+
+                <article>
+                  <div class="image" style="background-image: url('img/sample3.jpg')">
+                    <div class="right-btn-block">
+                      <button>72</button>
+                    </div>
+                    <div class="img-description">
+                      <p>Januari'15
+                        <strong>South France</strong>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                    text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                  </div>
+                </article>
+
+                </div>
+         </section>
+
+      <section class="newsletter-subscription">
+        <h2 class="newsletter-header">Subscribe to our
+          <strong>newspletter</strong>
+        </h2>
+        <form action="/subscribe" method="post" class="newsletter-form">
+          <input type="email" name="email" class="newsletter-email" placeholder="Enter your e-mail address" required>
+          <input type="submit" class="newsletter-btn" value="Subscribe">
+        </form>
+      </section>
+
+        <section class="footer-info">
+          <div class="footer-about">
+            <h4 class="footer-header">Black & White</h4>
+            <p class="footer-text">When we control font loading in JavaScript, this often is the behavior we're after. We want to be sure the text is visible
+              by default.</p>
+          </div>
+        
+          <div class="last-tweet">
+            <h4 class="footer-header">Last Tweet</h4>
+            <blockquote class="footer__last-tweet-text">Only reason why this is not certain is that it’s contingent on a shareholder vote.</blockquote>
+            <p class="footer__last-tweet-time">3 hours ago</p>
+          </div>
+        
+          <div class="contact-footer">
+            <h4 class="footer-header">Contact</h4>
+            <p class="footer__text">
+              <a href="https://github.com/IraLukianovets?tab=repositories">github.com/irynalukianovets</a>
+            </p>
+            <p class="footer__text">
+              <a href="https://www.google.com/maps/">182 AB Your Street Name</a>
+            </p>
+            <p class="footer__text">
+              <a href="mailto:">irynalukianovets@gmail.com</a>
+            </p>
+            <p class="footer__text">
+              <a href="tel:+380631215555">+38 (097) 087 1114</a>
+            </p>
+          </div>
+        
+          <div class="footer-newsletter">
+            <h4 class="footer-header">Newsletter</h4>
+            <p class="footer-text">Subscribe to our newsletter bla bla bla</p>
+            <form action="/subscribtion" method="post" class="subscription-form-footer">
+              <input type="email" name="email" class="newsletter-email-footer" placeholder="Enter your e-mail address" required>
+              <input type="submit" class="subscription-btn-footer" value="Subscribe">
+            </form>
+          </div>   
+        </section>
+        <hr>
+
+        <footer>
+            <p class="footer-copyright">&copy; 2015 Ruben Stom</p>
+            <ul class="footer-navigation">
+              <li>
+                <a href="/" class="footer-navigation-item">Home</a>
+              </li>
+              <li>
+                <a href="/about" class="footer-navigation-item">About</a>
+              </li>
+              <li>
+                <a href="/vacancies" class="footer-navigation-item">Vacancies</a>
+              </li>
+              <li>
+                <a href="/shop" class="footer-navigation-item">Shop</a>
+              </li>
+            </ul>
+        </footer>
+      </body>
+</html>

@@ -1,0 +1,287 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFW50bbck.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #F0F0F0;
+    font-family: 'Open Sans';
+}
+header {
+    height: 740px;
+    background: #6f6f6f url("../img/apples.jpg") center center no-repeat;
+    object-fit: cover;
+    color: white;
+}
+.logo {
+    position: absolute;
+    justify-content: space-between;
+    padding-top: 20px;
+    left: 20px;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+.rigth-navigation {
+    position: absolute;
+    text-align: right;
+    color: #fff;
+    text-decoration: none;
+    width: 350px;
+    top: 20px;
+    right: 20px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rigth-navigation a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.brand-header {
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+}
+.brand-since{
+    position: absolute;
+    left: 0;
+    top: 47%;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+.show-more-btn {
+    background-color: rgba(0,0,0,.4);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid #fff;
+    padding: 15px 30px;
+    width: 200px;
+    position: absolute;
+    margin: 0 auto;
+    left:0;
+    right:0;
+    top: 60%;
+}
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+    background-color: #fff;
+}
+.about-header {
+    padding: 40px;
+    width: 50%;
+    text-align: left;
+    font-weight: normal;
+}
+.about-text {
+    padding: 40px;
+    width: 50%;
+}
+.featured-articles-header{
+    text-align: center;
+    padding: 90px 0 70px;
+    font-weight: normal;
+}
+
+.img-design 
+{
+    height: 200px;
+    width: 300px;
+    background-position: center;
+    background-size:cover;
+}
+
+article {
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;  
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    height: 300px;
+}
+
+article .image {
+    flex: 60%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    margin-right: 15px;
+    color: #FFFFFF;
+}
+
+article:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+article .image .right-btn-block {
+    text-align: right;
+}
+
+article .image .img-description {
+    position: relative;
+    top: 82%;
+    margin-left: 10px;
+}
+
+article .image p {
+    flex-grow: 1;
+}
+
+article .description {
+    text-align: center;
+    flex: 40%;
+}
+article:nth-child(even){
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    font-weight: normal;
+    text-align: center;
+
+}
+article:nth-child(odd){
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-weight: normal;
+}
+.right-btn-block{
+    background-color: rgba(0,0,0,.4);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid #fff;
+    padding: 10px 15px;
+    display: inline-block;
+    position: absolute;
+}
+
+.newsletter-subscription {
+    margin: 50px 40px 0;
+    padding: 50px 20px ;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: normal;
+}
+
+.newsletter-form{
+    width: 100%;
+}
+
+.newsletter-email {
+    width: 65%;
+    padding: 15px;
+    background-color: #f3f3f3;
+    border: 1px solid #343638;
+    position: relative;
+    left: 5px;
+}
+.newsletter-btn {
+    padding: 16px 40px;
+    color: #fff;
+    background-color: #343638;
+    border: none;
+}
+.footer-about {
+    width: 20%;
+    color: #A4A4A4;
+
+}
+.footer-info {
+    background-color: #fff;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+}
+.last-tweet {
+    width: 23%;
+    color: #A4A4A4;
+    font:italic;
+}
+.contact-footer a {
+    width: 20%;
+    text-decoration: none;
+    color: #A4A4A4;
+}
+
+.footer-header{
+    color: black;
+    padding-bottom: 20px;
+}
+.footer-newsletter{
+    width: 25%;
+    color: #A4A4A4;
+}
+.newsletter-email-footer {
+    padding: 10px;
+    background-color: #f3f3f3;
+    border: 1px solid #343638;
+    position: relative;
+    width: 50%;
+    left: 4px;
+}
+.subscription-btn-footer {
+    padding: 11px 10px;
+    color: #fff;
+    background-color: #343638;
+    border: none;
+    
+}
+.subscription-form-footer {
+    margin-top: 15px;
+}
+
+hr {
+    color:grey;
+}
+.footer__bottom {
+    border-top: 2px solid #f0f0f0;
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.footer-copyright {
+    color: #9E9E9E;
+}
+
+.footer-navigation {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: 230px;
+}
+
+.footer-navigation-item {
+    color: #343638;
+    text-decoration: none;
+}
+
+

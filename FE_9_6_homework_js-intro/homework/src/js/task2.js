@@ -9,7 +9,7 @@ if (typeof sideA !== 'number' || typeof sideB !== 'number' || typeof angle !== '
     output = 'Invalid data';
 } else if (sideA <= 0 || sideB <= 0 || angle <= 0 || angle > ANGLE_SUM) {
     output = 'Invalid data';
-}else {
+} else {
     sideC = getSideС(sideA, sideB, angle).toFixed(2);
     perimeter = getPerimeter(sideA, sideB, sideC).toFixed(2);
     square = getSquare(perimeter, sideA, sideB, sideC).toFixed(2);

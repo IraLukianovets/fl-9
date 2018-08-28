@@ -4,7 +4,7 @@ function findType(argument) {
 }
 //2
 function forEach(array, consoleLogFunclion) {
-    for(let i = 0; i <= array.length; i++) {
+    for(let i = 0; i < array.length; i++) {
         consoleLogFunclion(array[i]);
     }
 
@@ -12,7 +12,7 @@ function forEach(array, consoleLogFunclion) {
 //3
 function transformedArray(array, consoleLogFunclion) {
     let newArray = [];
-    for (let i = 0; i <= array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         newArray.push(consoleLogFunclion(array[i]));
     }
     return newArray;

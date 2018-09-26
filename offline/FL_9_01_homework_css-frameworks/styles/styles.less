@@ -1,11 +1,5 @@
 @import "variables";
 
-.logo-block {
-    width: 20px;
-    height: 20px;
-    color: @red  !important;
-}
-
 hr {
     background-color: @blue  !important;
 }
@@ -43,6 +37,9 @@ hr {
             color: white !important;
         }
     }
+    button.navbar-toggler {
+        margin: 5px;
+    }
 }
 
 .footer-container {
@@ -50,4 +47,8 @@ hr {
     padding: 10px;
     background-color: @grey  !important;
     color: white;
+}
+
+@media (min-width: 992px) {
+    padding: 5px;
 }

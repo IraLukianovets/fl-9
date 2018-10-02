@@ -2,14 +2,19 @@ function Product({ name, description, price }) {
 
     this.name = name;
     this.description = description;
-    this.price = price;
+    this.price = price; 
 
     let purchaseHistory = []; 
-    let cartList = [];
-
+    let cartName;
 
     this.setPrice = function (price) {
-        price < this.price ? console.error('Cant set smaller price than it is!') : this.price = price;
+        if (price < this.price) {
+            purchaseHistory.push(`Failed attempt to change price from ${this.price} to ${price}`);
+        } else {
+            purchaseHistory.push(`Price is change from ${this.price} to ${price}`);
+            this.price = price;
+        }
+
         return this;
     }
 
@@ -17,14 +22,14 @@ function Product({ name, description, price }) {
         return this.price;
     }
 
-    this.add = function (cardName) {
-        cartList = cardName;
-        purchaseHistory.push(`${this.name} was added to ${cartList} on ${new Date()}`);
+    this.add = function (cartName) {
+        this.cartName = cartName;
+        purchaseHistory.push(`${this.name} was added to ${cartName} on ${new Date()}`);
 
         return this;
     }
     this.removeProduct = function (cartName) {
-        cartList = '';
+        this.cartName = undefined;
         purchaseHistory.push(`${this.name} is removed from ${cartName} on ${new Date()}`);
         return this;
     }
@@ -32,11 +37,9 @@ function Product({ name, description, price }) {
     this.getHistory = function () {
         return purchaseHistory;
     }
-
 }
 
 function ShoppingCart({name, owner, maxSize}) {
-
     this.name = name;
     this.owner = owner;
     this.maxSize = maxSize;
@@ -50,7 +53,8 @@ function ShoppingCart({name, owner, maxSize}) {
     this.addNewProduct = function (product) {
 
         if (!(product instanceof Product)) {
-            return console.log(`Error. product not an instance of Product`);
+            return console.log(`Error: object is not an instance of Product`);
+            cartHistory.push(`Failed to add non-product obj to cart on ${new Date()}`);
         }
 
         if (this.cartProducts.length < maxSize) {
@@ -73,10 +77,19 @@ function ShoppingCart({name, owner, maxSize}) {
     }
 
     this.removeProduct = function (product) {
+
+        if (!(product instanceof Product)) {
+            return console.log(`Error: product is not an instance of Product`);
+        }
+
         product.removeProduct(this.name);
         let id = this.cartProducts.indexOf(product);
-        this.cartProducts.splice(id, 1);
-        cartHistory.push(`${product.name} was removed from ${this.name} on ${new Date()}`);
+        if (id != -1) {
+            this.cartProducts.splice(id, 1);
+            cartHistory.push(`${product.name} was removed from ${this.name} on ${new Date()}`);
+        } else {
+            cartHistory.push(`${product.name} cannot remove unexisted product on ${new Date()}`);
+        }
 
         return this;
     }
@@ -108,9 +121,12 @@ function ShoppingCart({name, owner, maxSize}) {
         let productDescription = [];
 
         for (let i = 0; i < this.cartProducts.length; i++) {
-            productDescription.push(Object.entries(this.cartProducts[i].description).join(' ; ')
-                                                                                    .split(',')
-                                                                                    .join(':'));
+            productDescription.push(
+                Object.entries(this.cartProducts[i].description)
+                .join(' ; ')
+                .split(',')
+                .join(':')
+            );
         }
         for (let i = 0; i < this.cartProducts.length; i++) {
             result.push(`${this.cartProducts[i].name} - is on ${this.name} from ${this.cartProducts[i].date}.
@@ -142,7 +158,7 @@ const banana = new Product({
     },
     price: 30
   });
-  
+
   const stevesShopCart = new ShoppingCart({
     name: 'stevesCart',
     owner: 'Steve',
@@ -155,7 +171,7 @@ const banana = new Product({
     .addNewProduct(apple)
     .removeProduct(banana);
  
-    console.log(stevesShopCart.getHistoryLog())
+    console.log(stevesShopCart.getHistoryLog());
 
 
   

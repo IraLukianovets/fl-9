@@ -11,7 +11,7 @@ function Product({ name, description, price }) {
         if (price < this.price) {
             purchaseHistory.push(`Failed attempt to change price from ${this.price} to ${price}`);
         } else {
-            purchaseHistory.push(`Price is change from ${this.price} to ${price}`);
+            purchaseHistory.push(`Price was changed from ${this.price} to ${price}`);
             this.price = price;
         }
 
@@ -30,7 +30,7 @@ function Product({ name, description, price }) {
     }
     this.removeProduct = function (cartName) {
         this.cartName = undefined;
-        purchaseHistory.push(`${this.name} is removed from ${cartName} on ${new Date()}`);
+        purchaseHistory.push(`${this.name} was removed from ${cartName} on ${new Date()}`);
         return this;
     }
 
@@ -53,7 +53,7 @@ function ShoppingCart({name, owner, maxSize}) {
     this.addNewProduct = function (product) {
 
         if (!(product instanceof Product)) {
-            cartHistory.push(`Failed to add non-product obj to cart`);
+            cartHistory.push(`Failed to add a non-product obj to cart`);
         }
 
         if (this.cartProducts.length < maxSize) {

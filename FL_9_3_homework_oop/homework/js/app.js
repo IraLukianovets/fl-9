@@ -5,7 +5,7 @@ function Product({ name, description, price }) {
     this.price = price; 
 
     let purchaseHistory = []; 
-    let cartName;
+    this.cartName;
 
     this.setPrice = function (price) {
         if (price < this.price) {
@@ -53,8 +53,7 @@ function ShoppingCart({name, owner, maxSize}) {
     this.addNewProduct = function (product) {
 
         if (!(product instanceof Product)) {
-            return console.log(`Error: object is not an instance of Product`);
-            cartHistory.push(`Failed to add non-product obj to cart on ${new Date()}`);
+            cartHistory.push(`Failed to add non-product obj to cart`);
         }
 
         if (this.cartProducts.length < maxSize) {
@@ -84,7 +83,7 @@ function ShoppingCart({name, owner, maxSize}) {
 
         product.removeProduct(this.name);
         let id = this.cartProducts.indexOf(product);
-        if (id != -1) {
+        if (id !== -1) {
             this.cartProducts.splice(id, 1);
             cartHistory.push(`${product.name} was removed from ${this.name} on ${new Date()}`);
         } else {

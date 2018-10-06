@@ -31,7 +31,8 @@ Bot.prototype.showPosition = function () {
   return `I am ${this.name} and I am located at ${this.x}:${this.y}.`;
 }
 Bot.prototype.setSpeed = function (speed) {
-  return this.speed = speed;
+  this.speed = speed;
+  return this.speed;
 }
 Bot.prototype.getSpeed = function () {
   return this.speed;

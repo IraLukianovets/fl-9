@@ -58,10 +58,10 @@ Bot.prototype.move = function (direction) {
 
   switch (direction) {
       case 'up':
-          return this.y += this.getSpeed();
+          this.y += this.getSpeed();
           break;
       case 'down':
-          return this.y -= this.getSpeed();
+          this.y -= this.getSpeed();
           break;
       case 'left':
           this.x -= this.getSpeed();
@@ -98,16 +98,16 @@ Racebot.prototype.move = function (direction) {
   this.checkPreviousMove(direction)
   switch (direction) {
       case 'up':
-          return this.y += this.getSpeed();
+          this.y += this.getSpeed();
           break;
       case 'down':
-          return this.y -= this.getSpeed();
+          this.y -= this.getSpeed();
           break;
       case 'left':
-          return this.x -= this.getSpeed();
+          this.x -= this.getSpeed();
           break;
       case 'right':
-          return this.x += this.getSpeed();
+          this.x += this.getSpeed();
           break;
       default:
           console.log('Wrong direction');

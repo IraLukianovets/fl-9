@@ -32,7 +32,6 @@ Bot.prototype.showPosition = function () {
 }
 Bot.prototype.setSpeed = function (speed) {
   this.speed = speed;
-  return this.speed;
 }
 Bot.prototype.getSpeed = function () {
   return this.speed;

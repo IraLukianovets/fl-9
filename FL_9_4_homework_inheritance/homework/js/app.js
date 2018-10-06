@@ -96,22 +96,7 @@ Racebot.prototype.checkPreviousMove = function (direction) {
 
 Racebot.prototype.move = function (direction) {
   this.checkPreviousMove(direction)
-  switch (direction) {
-      case 'up':
-          this.y += this.getSpeed();
-          break;
-      case 'down':
-          this.y -= this.getSpeed();
-          break;
-      case 'left':
-          this.x -= this.getSpeed();
-          break;
-      case 'right':
-          this.x += this.getSpeed();
-          break;
-      default:
-          console.log('Wrong direction');
-  }
+  Bot.prototype.move.call(this, direction);
 };
 
 function Speedbot(args) {

@@ -1,5 +1,5 @@
 function assign () {
-  if (arguments === null ||  arguments === undefined) {
+  if (arguments === null || arguments === undefined) {
     throw new TypeError('Error!No data. Argument is undefined or null');
   }
 
@@ -18,9 +18,9 @@ function assign () {
   return toObj;
 }
 
-var defaults = { a: 123, b: 777 };
-var options = { a: 456 };
-var configs = assign({}, defaults, options);
+let defaults = { a: 123, b: 777 };
+let options = { a: 456 };
+let configs = assign({}, defaults, options);
 
 function Bot (args) {
   this.name = args.name;

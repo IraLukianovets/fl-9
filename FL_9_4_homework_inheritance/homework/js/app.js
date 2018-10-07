@@ -1,10 +1,10 @@
-function assign(targetObj) {
-  if (targetObj === null || targetObj === undefined) {
-    throw new TypeError('Error! Target is undefined or null');
+function assign () {
+  if (arguments === null ||  arguments === undefined) {
+    throw new TypeError('Error!No data. Argument is undefined or null');
   }
 
-  let toObj = Object(targetObj);
-  for (let i = 0; i < arguments.length; i++) {
+  let toObj = Object(arguments[0]);
+  for (let i = 1; i < arguments.length; i++) {
     let sourceObj = arguments[i];
 
     if (sourceObj) {
@@ -15,16 +15,18 @@ function assign(targetObj) {
       }
     }
   }
-
   return toObj;
 }
 
-function Bot(args) {
+var defaults = { a: 123, b: 777 };
+var options = { a: 456 };
+var configs = assign({}, defaults, options);
+
+function Bot (args) {
   this.name = args.name;
   this.speed = this.defaultSpeed = args.speed;
   this.x = args.x;
   this.y = args.y;
-
 }
 
 Bot.prototype.showPosition = function () {
@@ -50,46 +52,46 @@ Bot.prototype.setCoordinates = function (coord) {
 };
 
 Bot.prototype.showPosition = function () {
-  return console.log(`I am ${this.constructor.name} '${this.name}'.\
-I am located at: ${this.getCoordinates().x}:${this.getCoordinates().y} `);
+  return console.log(
+    `I am ${this.constructor.name} '${this.name}'.\
+    I am located at: ${this.getCoordinates().x}:${this.getCoordinates().y} `
+  );
 };
 
 Bot.prototype.move = function (direction) {
-
   switch (direction) {
-      case 'up':
-          this.y += this.getSpeed();
-          break;
-      case 'down':
-          this.y -= this.getSpeed();
-          break;
-      case 'left':
-          this.x -= this.getSpeed();
-          break;
-      case 'right':
-          this.x += this.getSpeed();
-          break;
-      default:
-          console.log('Error! Wrong Direction');
+    case 'up':
+      this.y += this.getSpeed();
+      break;
+    case 'down':
+      this.y -= this.getSpeed();
+      break;
+    case 'left':
+      this.x -= this.getSpeed();
+      break;
+    case 'right':
+      this.x += this.getSpeed();
+      break;
+    default:
+      console.log('Error! Wrong Direction');
   }
 }
 
-function Racebot(args) {
+function Racebot (args) {
   Bot.call(this, args);
-  this.previousMove = null;
+  this.previousMove = null; 
 }
 
 Racebot.prototype = Object.create(Bot.prototype);
 Racebot.prototype.constructor = Racebot;
 
 Racebot.prototype.checkPreviousMove = function (direction) {
-
   if (this.previousMove) {
-      if (this.previousMove === direction) {
-          this.setSpeed(this.getSpeed() + 1);
-      } else {
-          this.setSpeed(this.getDefaultSpeed());
-      }
+    if (this.previousMove === direction) {
+      this.setSpeed(this.getSpeed() + 1);
+    } else {
+      this.setSpeed(this.getDefaultSpeed());
+    }
   }
   this.previousMove = direction;
 }
@@ -99,7 +101,7 @@ Racebot.prototype.move = function (direction) {
   Bot.prototype.move.call(this, direction);
 };
 
-function Speedbot(args) {
+function Speedbot (args) {
   Bot.call(this, args);
 }
 
@@ -113,10 +115,9 @@ Speedbot.prototype.prepareEngine = function () {
 Speedbot.prototype.move = function (direction) {
   Bot.prototype.move.call(this, direction);
   if (this.getSpeed() > this.getDefaultSpeed()) {
-      this.setSpeed(this.getSpeed() - 1);
+    this.setSpeed(this.getSpeed() - 1);
   }
 }
-
 
 let Botty = new Bot({ name: 'Betty', speed: 2, x: 0, y: 1 });
 Botty.showPosition(); // I am Bot 'Betty'. I am located at 0:1.

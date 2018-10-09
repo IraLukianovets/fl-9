@@ -52,19 +52,16 @@ let crimeDataSource = (surname) => {
 
 let loadVictimData = name => {
     return new Promise((resolve, reject) => {
-
         victimDataSource(name).then(victim => {
-
             return crimeDataSource(victim.surname).then(crime => {
-
                 if (victim && crime) {
                     resolve(`${victim.name} ${victim.surname}(${victim.jobTitle}, ${victim.age}) \
-suffered from ${crime.title} in ${crime.place}`);
+                        suffered from ${crime.title} in ${crime.place}`);
                 } else {
                     reject('no data');
                 }
 
-            })
+            });
         }).catch(error => console.log(error));
 
     });

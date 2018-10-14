@@ -12,7 +12,7 @@ let http = {
             let xhr = new XMLHttpRequest();
             xhr.open('GET', url);
             xhr.onload = function() {
-                if (this.status >= 200 && this.status < 300) {
+                if (xhr.status >= 200 && xhr.status < 300) {
                     let response = JSON.parse(xhr.responseText);
                     resolve(response);
                 } else {

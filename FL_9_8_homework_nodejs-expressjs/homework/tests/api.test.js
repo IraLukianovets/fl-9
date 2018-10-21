@@ -50,9 +50,6 @@ describe('Service api', () => {
           .post('/car')
           .send(mock)
 
-        console.log("st code " + statusCode);
-        console.log("body " + body.message);
-
         assert.equal(statusCode, 409);
         assert.equal(body.message, 'Car already exists.');
       });
@@ -79,7 +76,6 @@ describe('Service api', () => {
           engineVolume: 2.9,
           year: 2001
         };
-        console.log(statusCode);
         assert.equal(statusCode, 200);
         assert.deepEqual(body, mock);
       });

@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-expressjs-task",
+  "version": "1.0.0",
+  "description": "NodeJS and ExpressJS practice",
+  "main": "src/server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "joi": "^14.0.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.0.0",
+    "supertest": "^3.0.0"
+  },
+  "scripts": {
+    "test": "mocha tests",
+    "start": "node starter"
+  },
+  "author": "",
+  "license": "ISC"
+}

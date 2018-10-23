@@ -1,0 +1,11 @@
+{
+  "undef": true,
+  "unused": false,
+  "esversion": 6,
+  "browser": true,
+  "globals": {
+    "Clock": false,
+    "moment": false,
+    "CanvasState": false
+  }
+}

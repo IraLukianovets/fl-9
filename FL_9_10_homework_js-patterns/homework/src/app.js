@@ -1,5 +1,4 @@
 let Store = function () {
-
     this.pizzaSlicePrice = function (number) {
         this.pizzaPrice = number;
     };
@@ -22,16 +21,13 @@ let Store = function () {
 };
 
 let GetDiscount = function (pizza, weekendDiscount, nightDiscount) {
-
     this.pizza = pizza;
     this.weekendDiscount = weekendDiscount;
     this.nightDiscount = nightDiscount;
 
     this.buyPizza = function () {
-
         let price = this.pizza.pizzaPrice;
         let date = new Date();
-
         const NIGHT_BEGIN = 23;
         const NIGHT_END = 6;
         const SATURDAY = 6;
@@ -51,7 +47,6 @@ let GetDiscount = function (pizza, weekendDiscount, nightDiscount) {
 };
 
 let SetBonus = function (pizza) {
-
     this.pizza = pizza;
     this.bonus = pizza.bonus;
     this.pizzaPrice = pizza.pizzaPrice;

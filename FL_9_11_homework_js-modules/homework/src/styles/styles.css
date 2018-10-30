@@ -44,15 +44,14 @@ body {
 }
 
 .calculator__display {
-  background-color: #222222;
-  color: #fff;
-  font-size: 1.714285714em;
+  background-color: #fff;
+  font-size: 1.7em;
   padding: 0.5em 0.75em;
   text-align: right;
 }
 
 .calculator__keys {
-  background-color: #999;
+  background-color: rgb(92, 87, 87);
   display: grid;
   grid-gap: 1px;
   grid-template-columns: repeat(4, 1fr);

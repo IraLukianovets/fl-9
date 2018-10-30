@@ -1,5 +1,5 @@
 import '../styles/styles.css';
-import {calculate} from './interface-module';
+import { calculate } from './interface-module';
 
 const calcTemplate = `
 <div class= "calculator">
@@ -41,22 +41,29 @@ keys.addEventListener('click', e => {
 
         const previousKeyType = calculator.dataset.previousKeyType
 
-        if (action === 'clear') {
-            display.textContent = 0
-            key.textContent = 'AC'
-            calculator.dataset.previousKeyType = 'clear'
-        }
-        //to works with numbers
         if (!action) {
-            if (displayedNum === '0') {
+            if (
+                displayedNum === '0' ||
+                previousKeyType === 'operator' ||
+                previousKeyType === 'calculate'
+            ) {
                 display.textContent = keyContent
             } else {
                 display.textContent = displayedNum + keyContent
             }
+            calculator.dataset.previousKeyType = 'number'
         }
-        //to display decimal
+
         if (action === 'decimal') {
-            display.textContent = displayedNum + '.'
+            if (!displayedNum.includes('.')) {
+              display.textContent = displayedNum + '.'
+            } else if (
+              previousKeyType === 'operator' ||
+              previousKeyType === 'calculate'
+            ) {
+              display.textContent = '0.'
+            }
+            calculator.dataset.previousKeyType = 'decimal'
         }
 
         if (
@@ -68,46 +75,49 @@ keys.addEventListener('click', e => {
             const firstValue = calculator.dataset.firstValue
             const operator = calculator.dataset.operator
             const secondValue = displayedNum
-            
-            if (firstValue && operator) {
-                display.textContent = calculate(firstValue, operator, secondValue)
-            }
-//added to fix 2d param
             if (
                 firstValue &&
                 operator &&
-                previousKeyType !== 'operator'
+                previousKeyType !== 'operator' &&
+                previousKeyType !== 'calculate'
             ) {
                 const calcValue = calculate(firstValue, operator, secondValue)
                 display.textContent = calcValue
-                // Update calculated value as firstValue
                 calculator.dataset.firstValue = calcValue
             } else {
-                // set displayedNum as the firstValue
                 calculator.dataset.firstValue = displayedNum
             }
-
+            
             calculator.dataset.previousKeyType = 'operator'
-            calculator.dataset.firstValue = displayedNum
             calculator.dataset.operator = action
-
         }
 
-        if (!action) {
-            if (displayedNum === '0' || previousKeyType === 'operator') {
-                display.textContent = keyContent
+        if (action === 'clear') {
+            if (key.textContent === 'AC') {
+              calculator.dataset.firstValue = ''
+              calculator.dataset.modValue = ''
+              calculator.dataset.operator = ''
+              calculator.dataset.previousKeyType = ''
             } else {
-                display.textContent = displayedNum + keyContent
+              key.textContent = 'AC'
             }
+            display.textContent = 0
+            calculator.dataset.previousKeyType = 'clear'
         }
 
         if (action === 'calculate') {
-            console.log('calc action');
-            const firstValue = calculator.dataset.firstValue;
-            const operator = calculator.dataset.operator;
-            const secondValue = displayedNum;
-
-            display.textContent = calculate(firstValue, operator, secondValue)
+            let firstValue = calculator.dataset.firstValue
+            const operator = calculator.dataset.operator
+            let secondValue = displayedNum
+            if (firstValue) {
+              if (previousKeyType === 'calculate') {
+                firstValue = displayedNum
+                secondValue = calculator.dataset.modValue
+              }
+              display.textContent = calculate(firstValue, operator, secondValue)
+            }
+            calculator.dataset.modValue = secondValue
+            calculator.dataset.previousKeyType = 'calculate'
         }
 
     }

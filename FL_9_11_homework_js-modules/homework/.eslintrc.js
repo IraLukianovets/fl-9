@@ -37,6 +37,9 @@ module.exports = {
         "arrow-spacing": ["error", { "before": true, "after": true }],
         "no-useless-computed-key": "error",
         "no-useless-constructor": "error",
-        "no-var": "warn"
+        "no-var": "warn",
+    },
+    "parserOptions": {
+        "sourceType": "module"
     }
 }

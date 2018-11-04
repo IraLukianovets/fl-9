@@ -1,10 +1,10 @@
 import './style.scss';
-import { template } from './utils/index';
-import { LOAD_MORE, REMOVE_USER, SEARCH, addAction } from './actions/actions';
-import { createStore } from './store/store';
-import { reducer } from './reducers/reducers'
-import { USERS } from './storages/userStorage'
-import { getDomElements} from './storages/domElements'
+import {template} from './utils/index';
+import {LOAD_MORE, REMOVE_USER, SEARCH, addAction} from './actions/actions';
+import {createStore} from './store/store';
+import {reducer} from './reducers/reducers';
+import {USERS} from './storages/userStorage';
+import {getDomElements} from './storages/domElements';
 
 const root = document.getElementById('root');
 root.innerHTML = template;

@@ -22,7 +22,6 @@ function userStorage(defaultUsers) {
     const deleteUser = (removeId) => {
         return users = users.filter((user) => user.id != removeId);
     };
-    
     return {
         getUsers,
         showByDefault,

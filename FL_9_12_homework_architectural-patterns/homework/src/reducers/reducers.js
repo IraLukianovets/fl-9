@@ -1,6 +1,6 @@
-import { LOAD_MORE, REMOVE_USER, SEARCH, addAction } from '../actions/actions'
-import { USERS, STEP, SHOWED_BY_DEFAULT } from './../storages/userStorage'
-import { getDomElements } from './../storages/domElements'
+import {LOAD_MORE, REMOVE_USER, SEARCH} from '../actions/actions';
+import {USERS, STEP, SHOWED_BY_DEFAULT} from './../storages/userStorage';
+import {getDomElements} from './../storages/domElements';
 
 const defaultState = USERS.showByDefault();
 const defaultAction = {
@@ -8,7 +8,7 @@ const defaultAction = {
 };
 
 export const reducer = function(state = defaultState, action = defaultAction) {
-let DOM_ELEMENTS = getDomElements();
+    let DOM_ELEMENTS = getDomElements();
 
     switch (action.type) {
     case LOAD_MORE:

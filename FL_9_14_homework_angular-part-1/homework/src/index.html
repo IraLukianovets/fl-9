@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app="blogApp" lang="en">
+<head>
+  <title>Blog</title>
+  <link rel="stylesheet" href="../src/assets/css/style.css">
+</head>
+
+<body ng-controller="blogItems as $ctrl">
+  <div class="wrapper">
+    <h1 class="blog-title">POSTS WALL</h1>
+    <div class="search-by-title">
+      <input ng-model="searchTitle" class="search-blog_title" type="text" placeholder="Search by title...">
+    </div>
+
+    <div class="blog-content__wrap">
+
+      <div class="blog-content">
+        <blog-post ng-repeat="blog in $ctrl.getBlogItems() | filter: {title: searchTitle}" title="blog.title"
+          description="blog.description" image="blog.image" author="blog.author" likes="blog.likes" sorttag="$ctrl.filterBy">
+        </blog-post>
+
+        <button ng-click="$ctrl.addNewPostForm()" class="add-post">
+          Add new post
+        </button>
+
+        <form class="form-add_item" ng-show="showAddForm">
+
+          <div class="author-row row-add">
+            <div class="form-field">
+              <div ng-init="profileImg = '../src/assets/img/profile.jpg'">
+                <img ng-src="{{profileImg}}" class='profile-photo'>
+              </div>
+              <div class="blog-item__name">{{user.name}}</div>
+            </div>
+          </div>
+
+          <div class="title-row row-add">
+            <div class="form-field">
+              <input type="text" ng-model="title" placeholder="Title ..." class="new-post-info">
+            </div>
+          </div>
+
+          <div class="desc-row row-add">
+            <div class="form-field">
+              <textarea rows="4" ng-model="description" placeholder="Description ..." class="new-post-info"></textarea>
+            </div>
+          </div>
+
+          <div class="add-item">
+            <button ng-click="$ctrl.addBlogItem()">Save</button>
+            <button ng-click="$ctrl.deleteBlogItem()">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script type="text/ng-template" id="blog.html">
+      <div class="blog-item">
+        <div class="title-wrap">
+
+          <img ng-src="assets/{{image}}" alt="photo" class="profile-photo">
+          <div class="blog-item__name">{{author}}</div>
+
+          <div ng-hide="editorEnabled" class="blog-item__title">
+            {{title}}
+          </div> 
+
+          <input ng-show="editorEnabled" ng-model="editableTitle" class="edit-title" type="text">
+        </div>
+     
+        <div ng-hide="editorEnabled">{{description}}</div>
+
+        <div ng-show="editorEnabled" class="edit-description">
+          <textarea ng-model="editableDescription">
+            {{description}}
+          </textarea>
+        </div>
+        <div class="likes">
+          <i ng-click="like($event)" ng-class="{active : isLiked}">♥</i>
+          {{likes}}
+        </div> 
+        <div class="blog-item__edit" ng-if="author == 'Ira'">
+          <button ng-click="enableEditor($event)">Edit</button>
+        </div>
+      </div>
+    </script>
+  <script src="./lib/angular.min.js"></script>
+  <script src="../src/app/app.module.js"></script>
+  <script src="../src/app/app.controller.js"></script>
+  <script src="../src/app/app.directive.js"></script>
+  <script src="../src/app/app.constants.js"></script>
+</body>
+
+</html>

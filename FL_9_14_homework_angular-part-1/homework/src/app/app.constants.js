@@ -14,8 +14,8 @@ const defaultPosts = [
         likes: '2'
     },
     {
-        title: 'Asome News',
-        author: 'Json Statchem',
+        title: 'Awesome News',
+        author: 'Json Statham',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, quis architecto omnis officia quae voluptas repudiandae totam error esse ipsum facilis perspiciatis, accusantium libero in obcaecati! Explicabo iste sunt nam.',
         image: '../assets/img/person.jpg',
         likes: '3'

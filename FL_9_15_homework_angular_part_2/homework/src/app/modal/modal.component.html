@@ -1,0 +1,32 @@
+<div class="header">
+    <h3>
+        <button class="btn btn-primary" (click)="addLesson()">Add</button>
+    </h3>
+</div>
+<table *ngIf="lessons.length > 0;else empty_content">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Topic</th>
+        <th>Date</th>
+        <th>Teacher</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr app-class *ngFor="let class of lessons; let i = index"
+            [item]="class"
+            [number]="i + 1"
+            (removeItem)="onRemove($event)"
+            (saveItem)="onSave($event)">
+        </tr>
+    </tbody>
+</table>
+
+<!--
+<ng-template #empty_content>
+    <div class="empty-content">
+        <button class="btn btn-primary" (click)="addLesson()">Add</button>
+    </div>
+</ng-template>
+-->
